@@ -3,8 +3,9 @@
 public class Customer extends Person{
 	private String License,cust_id,isPremiumCustomer,login,password;
 	
-	public Customer()
+	public Customer(String Name)
 	{
+		super(Name);
 		Station cust_station = new Station(); 
 		BookingDetails cust_book = new BookingDetails();
 		Cycle cust_cycle=new Cycle();
@@ -20,9 +21,8 @@ public class Customer extends Person{
 	}
 	public static void main(String[] args) {
 		System.out.println("Hey Welcome! Select your Ride today ! ");
-		Customer custnew=new Customer();
-		custnew.add_details();
-		custnew.remove_details();
+		Customer custnew=new Customer("Tina");
+		custnew.add_details(); 
 		
 		
 		
