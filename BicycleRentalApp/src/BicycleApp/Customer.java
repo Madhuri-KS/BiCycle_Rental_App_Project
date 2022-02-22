@@ -1,6 +1,7 @@
-package BicycleApp;
+	package BicycleApp;
 
 public class Customer extends Person{
+	private String License,cust_id,isPremiumCustomer,login,password;
 	
 	public Customer()
 	{
@@ -12,6 +13,10 @@ public class Customer extends Person{
 		Payment cust_payment=new Payment();
 		Inventory cust_inv=new Inventory();	
 		
+	}
+	public int check_license_validity()
+	{
+		return 0;
 	}
 	public static void main(String[] args) {
 		System.out.println("Hey Welcome! Select your Ride today ! ");
