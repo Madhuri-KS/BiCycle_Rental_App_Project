@@ -4,11 +4,7 @@ public abstract class Person {
  public String ID,name,address, gender, type ;
  public float age;
 private String nm;
- public Person(String nm)
- {
-	 name = this.nm;
- }
- public void add_details() {
+  public void add_details() {
 	 
 	 System.out.println("Add Cust Details");
  }

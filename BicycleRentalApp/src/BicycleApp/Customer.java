@@ -2,7 +2,7 @@ package BicycleApp;
 
 public class Customer extends Person{
 	
-	public Customer(String name)
+	public Customer()
 	{
 		Station cust_station = new Station(); 
 		BookingDetails cust_book = new BookingDetails();
@@ -15,7 +15,7 @@ public class Customer extends Person{
 	}
 	public static void main(String[] args) {
 		System.out.println("Hey Welcome! Select your Ride today ! ");
-		Customer custnew=new Customer("Rob");
+		Customer custnew=new Customer();
 		custnew.add_details();
 		custnew.remove_details();
 		
