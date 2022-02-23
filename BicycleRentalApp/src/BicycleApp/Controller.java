@@ -1,18 +1,19 @@
 package BicycleApp;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
 
-public class Controller {
-	public String gearStatus,currentSpeed,display,navigation;
-	public float charging;
-	public Date start_time, end_time;
-	public void calculate_duration(Date start_time) {}
+public interface Controller {
+	public static final String currentSpeed = "";
+	public static final float charging = 0;
+	public long calculate_duration(Date start_time, Date end_time);
 	
-	public void setStartTime() {}
-	public void setEndTime() {}
-	public void CalculateDistanceTravelled() {}
+	public void setStartTime();
+	public void setEndTime();
+	public void CalculateDistanceTravelled();
 	
-	public void setNavigation(boolean flag) {}
-	public void displayNavigation() {}
-	public void isSufficientlyCharged() {}
+	public void setNavigation(boolean flag);
+	public void displayNavigation();
+	public void isSufficientlyCharged();
 }

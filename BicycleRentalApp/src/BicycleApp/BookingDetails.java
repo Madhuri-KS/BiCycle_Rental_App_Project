@@ -4,15 +4,18 @@ import java.nio.charset.Charset;
 import java.util.Random;
 import java.util.Scanner;
 
+/* Booking Class Extends Cycle to obtain its inventory details while making booking  */
 public class BookingDetails extends Cycle {
+	
+	/* Attributes - BookingID, Start destination/to ,end destination/from, status, duration of the ride etc.  */
 	String BookingID, To, from,  status, rating;
-	public int duration;
+	public long duration, actual_duration,penalty;
+	/* Methods - To check cycle availability */
   	public String checkAvailability(Cycle cyc)
   	{
-  		System.out.println("HERE NOW");
+  		/* Method - To get Cycle Details */
   		String cy1=cyc.getDetails();
-  		System.out.println("HERE NOW got details" +cy1);
-  		if(cy1=="")
+   		if(cy1=="")
   		{
   			System.out.println("Cycle Unavailable");
   			return "Cycle Unavailable";
@@ -21,11 +24,11 @@ public class BookingDetails extends Cycle {
   			System.out.println("Cycle available");
   			return "Cycle available : "+cy1;
   	}
-  	
+  	/* Method - To get Booking ID generated */
     public String getBookingID() {
 		return BookingID;
 	}
-
+    /* Method - To generate the Booking ID  */
 	public void setBookingID()
 	{
 		StringBuilder generatedString = new StringBuilder();
@@ -42,6 +45,7 @@ public class BookingDetails extends Cycle {
 	    }
 	}
 
+	/* Method - To ask user to select duration of the cycle to be rented */
 	public void SelectDuration()
     {
     	 int selection;
@@ -70,6 +74,7 @@ public class BookingDetails extends Cycle {
          }
      }
 
+	/* Method - To ask user to Confirm cycle booking  */
 	public String confirm()
 	{
 		 int selection;
@@ -86,19 +91,34 @@ public class BookingDetails extends Cycle {
          
          switch (selection)
          {
-         case 1: System.out.println("Confirm, Proceed to Payment");status="Confirmed";break;
+         case 1: System.out.println("Confirm, Proceed to Payment");status="Confirm";break;
          case 2: System.out.println("Cancelled");status="Cancel";break;
          default: System.out.println("Invalid Selection");status="Cancel";break;
          }
          return status;
 	}
+	/* Methods - To cancel/modify details of ride  */
 	public void cancel() {}
 	public void modify() {}
+	/* Methods - charge penalty for rides */
 	public void charge_penalty() 
 	{
-		
+		long actual_dur=(calculate_duration(Cycle.start_time, Cycle.end_time))/(60 * 1000) % 60;
+		Random r=new Random();
+		//Adding 30-32 mins randomly for checking penalty duration
+		long actual_duration=actual_dur+(r.nextInt(30, 32));
+		if (actual_duration-duration>=0) 
+		{
+			penalty=100;
+			System.out.println("Penalty Charged Duration Difference Details : " + actual_duration+"-"+duration+"="+(actual_duration-duration));
+		}
+		else
+		{
+			penalty=0;
+			System.out.println("No Penalty Charged Cycle returned on time. Details : " + actual_duration+"-"+duration+"="+(actual_duration-duration));
+		}
+			
 	}
 	
-
 	
 }

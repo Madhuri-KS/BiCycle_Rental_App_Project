@@ -1,5 +1,7 @@
 package BicycleApp;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -32,7 +34,7 @@ public class Customer extends Person {
 	RidingSystem cust_ridingsys;
 	Controller cust_controller;
 	Payment cust_payment;
-	Inventory cust_inv;
+
 	 
 	/* Constructor of Customer */
 	public Customer(String Name)
@@ -41,10 +43,8 @@ public class Customer extends Person {
 		cust_station = new Station(); 
 		cust_book = new BookingDetails();
 		//cust_cycle=new Cycle();
-		cust_ridingsys=new RidingSystem();
-		cust_controller=new Controller();
 	    cust_payment=new Payment();
-		cust_inv=new Inventory();	
+ 	
 	}
 	
 	/* Method to validate the license of Customer */
@@ -97,6 +97,10 @@ public class Customer extends Person {
 						cust_book.setBookingID();
 						cust_book.getBookingID();
 						System.out.println("Cycle Booked ...."+cust_book.BookingID);
+						cust_book.setStartTime();
+						cust_book.setEndTime(); 
+						cust_book.charge_penalty();
+						
 					}
 					else
 					{
