@@ -8,14 +8,14 @@ public class Person {
 	 this.name=nm;
  }
   public void add_details() {
-	 	 System.out.println("Add Cust Details for " + name);
+	 	 System.out.println("Added Cust Details for " + name);
  }
  public void remove_details() {
 	 
-	 System.out.println("Remove Cust Details " + name);
+	 System.out.println("Removed Cust Details " + name);
  }
  public void modify_details() {
-	 System.out.println("Modify Cust Details " + name);
+	 System.out.println("Modified Cust Details " + name);
  }
  
  
