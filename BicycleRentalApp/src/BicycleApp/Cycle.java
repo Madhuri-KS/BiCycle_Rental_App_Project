@@ -85,7 +85,7 @@ public class Cycle implements Controller{
 				Random r=new Random();
 				Calendar date = Calendar.getInstance(); 
 				//Randomly add 30 or 31 mins to the time
-				date.add(Calendar.MINUTE, r.nextInt(30,31));
+				date.add(Calendar.MINUTE, r.nextInt(30,32));
 				end_time =date.getTime(); 
 				System.out.println("After adding 30 mins : " + end_time);	    
 			}
