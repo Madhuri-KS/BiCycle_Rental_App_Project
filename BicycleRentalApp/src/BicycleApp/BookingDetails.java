@@ -109,13 +109,13 @@ public class BookingDetails extends Cycle {
 		if ((actual_duration-duration)>0) 
 		{
 			penalty=100;
-			System.out.println("Duration of Your Ride Ended at: " + actual_duration);
+			System.out.println("Duration of Your Ride : " + actual_duration);
 			System.out.println("Penalty Charged Duration Difference Details : " + actual_duration+"-"+duration+"="+(actual_duration-duration));
 		}
 		else
 		{
 			penalty=0;
-			System.out.println("Duration of Your Ride Ended at: " + actual_duration);
+			System.out.println("Duration of Your Ride : " + actual_duration);
 			System.out.println("No Penalty Charged Cycle returned on time. Details : " + actual_duration+"-"+duration+"="+(actual_duration-duration));
 		}
 			
