@@ -81,7 +81,7 @@ public class Cycle implements Controller{
 			if(c_end.equals("Y")) 
 			{
 				end_time=Calendar.getInstance().getTime();
-			    System.out.println("Your Ride Ended at: " + end_time);			    
+			    //System.out.println("Your Ride Ended at: " + end_time);			    
 			}
 			else 
 			{

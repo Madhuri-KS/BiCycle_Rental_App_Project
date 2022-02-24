@@ -106,10 +106,11 @@ public class BookingDetails extends Cycle {
 		long actual_dur=(calculate_duration(Cycle.start_time, Cycle.end_time))/(60 * 1000) % 60;
 		Random r=new Random();
 		//Adding 30-32 mins randomly for checking penalty duration
-		long actual_duration=actual_dur+(r.nextInt(30, 32));
-		if (actual_duration-duration>=0) 
+		long actual_duration=actual_dur+(r.nextInt(30, 31));
+		if ((actual_duration-duration)>0) 
 		{
 			penalty=100;
+			System.out.println("Your Ride Ended at: " + actual_duration);
 			System.out.println("Penalty Charged Duration Difference Details : " + actual_duration+"-"+duration+"="+(actual_duration-duration));
 		}
 		else
