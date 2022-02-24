@@ -116,6 +116,7 @@ public class BookingDetails extends Cycle {
 		else
 		{
 			penalty=0;
+			System.out.println("Your Ride Ended at: " + actual_duration);
 			System.out.println("No Penalty Charged Cycle returned on time. Details : " + actual_duration+"-"+duration+"="+(actual_duration-duration));
 		}
 			
