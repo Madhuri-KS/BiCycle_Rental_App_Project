@@ -1,8 +1,10 @@
 package BicycleApp;
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 import java.util.Scanner;
 
 /* Cycle has a controller */
@@ -79,9 +81,14 @@ public class Cycle implements Controller{
 			Scanner c_in = new Scanner(System.in);
 			String c_end= c_in.nextLine();
 			if(c_end.equals("Y")) 
-			{
-				end_time=Calendar.getInstance().getTime();
-			    //System.out.println("Your Ride Ended at: " + end_time);			    
+			{				
+				Random r=new Random();
+				Date end_dt_time = Calendar.getInstance().getTime();
+				Calendar date = Calendar.getInstance();
+				long timeInSecs = date.getTimeInMillis();
+				//Randomly add 30 or 31 mins to the time
+				Date end_time = new Date(timeInSecs + (10 * (r.nextInt(120, 121) * 1000)));
+				System.out.println("After adding 30 mins : " + end_time);	    
 			}
 			else 
 			{
